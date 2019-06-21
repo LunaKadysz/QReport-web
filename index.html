@@ -48,7 +48,7 @@
   <header class="bg-primary text-white">
     <div class="container text-center">
       <h1>Acertijos Resueltos</h1>
-      <p class="lead">En esta pagina estan resueltos dos de los acertijos propuestos. Para el primero hay dos metodos de resolucion. El ultimo no la tiene</p>
+      <p class="lead">En esta página están resueltos dos de los acertijos propuestos. Para el primero hay dos metodos de resolución. El segundo no tiene una solución posible.</p>
     </div>
   </header>
 
@@ -57,7 +57,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Cuadrados 1</h2>
-          <p class="lead">Consiste en un cuadrado dividido en 16 figuras geométricas cuadradas más pequeñas. La pregunta "¿cuántos cuadrados ves?</p>
+          <p class="lead">Consiste en un cuadrado dividido en 16 cuadrados más pequeños. La pregunta es ¿cuántos cuadrados ves?</p>
           
 <!-- code=python (!bc pypro) typeset with pygments style "default" -->
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF; font-weight: bold">suma_iterada</span><span style="color: #008000; font-weight: bold">(</span>n<span style="color: #008000; font-weight: bold">)</span>:
@@ -70,22 +70,25 @@
 numero <span style="color: #008000; font-weight: bold">=</span><span style="color: #008000; font-weight: bold"> int</span>(<span style="color: #008000; font-weight: bold">input</span>("Ingrese un numero natural:"))
 <span style="color: #008000; font-weight: bold">print</span>(<span style="color: #0000FF; font-weight: bold">suma_iterada</span><span style="color: #008000; font-weight: bold">(</span>numero<span style="color: #008000; font-weight: bold">)</span>)
 </pre></div>
- <p class="lead">Para resolver este problema se tuvo en cuenta el patrón de soluciones. Cumplen que son la suma de los cuadrados de los numeros naturales menores o iguales al tamaño del tablero que se quiere hallar. Con esto en cosideración, el código propuesto es una iteración de los cuadrados de los numeros naturales mencionados. A medida que la iteración se va llevando a cabo, se guarda en la variable resultado los-valga la redundancia- resultados anteriores.</p> 
+ <p class="lead">Sabemos que la respuesta es la suma de los cuadrados de los numeros enteros de 1 hasta 4. Con esto en cosideración, el código propuesto es una iteración de los cuadrados de los numeros naturales para un caso general en donde n es la dimensión del cuadrado. A medida que la iteración se va llevando a cabo, se suma en la variable resultado los-valga la redundancia- resultados anteriores.</p> 
 <br>
 <br>
 	<h2>Cuadrados 2</h2>
-	          <p class="lead">Aca está la segunda resolución al problema. Esta vez, utilizando el producto interno de vectores.</p>
+	          <p class="lead">Acá está la segunda resolución al problema. Esta vez, utilizando el producto interno del vector cuyos elementos estan dados todos los numeros naturales entre 1 y n.</p>
 	          <!-- code=python (!bc pypro) typeset with pygments style "default" -->
-	<div class="highlight" style="background: #e8e8e8"><pre style="line-height: 125%"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF; font-weight: bold">suma_</span><span style="color: #008000; font-weight: bold">(</span>n<span style="color: #008000; font-weight: bold">)</span>:
-	   v <span style="color: #008000; font-weight: bold">=</span> np<span style="color: #008000; font-weight: bold">.</span><span style="color: #008000; font-weight: bold">arange</span>.(1,n+1)
-	   sqr <span style="color: #008000; font-weight: bold">=</span> (np<span style="color: #008000; font-weight: bold">.</span><span style="color: #008000; font-weight: bold">inner</span>.(1,n+1))
-	   <span style="color: #008000; font-weight: bold">return</span> sqr
+	<div class="highlight" style="background: #e8e8e8"><pre style="line-height: 125%">
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> as np
 
-	numero <span style="color: #008000; font-weight: bold">=</span><span style="color: #008000; font-weight: bold"> int</span>(<span style="color: #008000; font-weight: bold">input</span>("Ingrese un numero natural:"))
-	<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #0000FF; font-weight: bold">suma_</span><span style="color: #008000; font-weight: bold">(</span>numero<span style="color: #008000; font-weight: bold">)</span>)
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF; font-weight: bold">suma_</span><span style="color: #008000; font-weight: bold">(</span>n<span style="color: #008000; font-weight: bold">)</span>:
+   v <span style="color: #008000; font-weight: bold">=</span> np<span style="color: #008000; font-weight: bold">.</span><span style="color: #008000; font-weight: bold">arange</span>.(1,n+1)
+   sqr <span style="color: #008000; font-weight: bold">=</span> (np<span style="color: #008000; font-weight: bold">.</span><span style="color: #008000; font-weight: bold">inner</span>.(1,n+1))
+   <span style="color: #008000; font-weight: bold">return</span> sqr
+
+numero <span style="color: #008000; font-weight: bold">=</span><span style="color: #008000; font-weight: bold"> int</span>(<span style="color: #008000; font-weight: bold">input</span>("Ingrese un numero natural:"))
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #0000FF; font-weight: bold">suma_</span><span style="color: #008000; font-weight: bold">(</span>numero<span style="color: #008000; font-weight: bold">)</span>)
 	</pre></div>
 	<p class="lead">Esta solución tuvo en consideración las suposiciones mencionadas en Cuadrados 1. 
-	Como solución queremos la suma de los cuadrados de los numeros naturales menores o iguales al tamaño de tabla elegido. Entonces sabemos que el producto interno de un vector en una dimensión por si mismo es la definición de eso mismo. En otras palabras, el cuadrado de su norma 2.</p> 
+	Como solución queremos la suma de los cuadrados de los numeros naturales menores o iguales al tamaño de tabla elegido. Dado que el producto interno de un vector consigo mismo es la suma de los cuadrados de sus elementos, basta definir un vector cuyas entradas sean los números naturales entre 1 y n y efectuar dicha operación.</p> 
         </div>
       </div>
     </div>
@@ -96,12 +99,12 @@ numero <span style="color: #008000; font-weight: bold">=</span><span style="colo
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2>Tabla 8x8</h2>
-          <p class="lead">El siguiente acertijo plantea lo siguiente: supongamos que a un tablero de 8×8 se le eliminan dos esquinas diagonalmente opuestas, dejando 62 casillas. ¿Es posible colocar 31 piezas de dominó de tamaño 2×1 recubriendo todo el tablero?</p>
+          <p class="lead">Para el siguiente acertijo supongamos que a un tablero de 8×8 se le eliminan dos esquinas diagonalmente opuestas, dejando 62 casillas. ¿Es posible colocar 31 piezas de dominó de tamaño 2×1 recubriendo todo el tablero?</p>
           <img src="img.jpeg" >
           <p class="lead">Como está mencionado en el encabezado, no es posible colocar las piezas de dominó tal que cubran la totalidad de la superficie deseada.</p>
-          <p class="lead">Para entender la razón pensémoslo de la siguiente forma:</p>
-      	  <p class="lead">Cada pieza de dominó ocupa necesariemente dos casillas: una blanca y una negra. Por ende, al haber sido eliminadas dos esquinas cuyos colores coinciden, los espacios del color opuesto correspondientes a las mismas quedarán forzosamente vacíos.</p>
-      	<p class="lead">Como observación de este problema podemos decir que si se cubren dos casillas del mismo color, dondequiera que estén ubicadas, no se podrán colocar las 31 piezas de dominó.</p>
+          <p class="lead">La razón es la siguiente:</p>
+      	  <p class="lead">Cada pieza de dominó ocupa necesariemente dos casillas: una roja y una negra. Por ende, al haber sido eliminadas dos esquinas cuyos colores coinciden, habrá dos espacios del color opuesto vacíos.</p>
+      	<p class="lead">Como observación a este problema podemos decir que si se eliminan dos casillas del mismo color, dondequiera que estén ubicadas, no se podrán colocar las 31 piezas de dominó recubriendo todo el tablero.</p>
         </div>
       </div>
     </div>
@@ -131,8 +134,7 @@ numero <span style="color: #008000; font-weight: bold">=</span><span style="colo
           <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%">
 <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> as plt
 <span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">colors</span>
-<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> as np
-<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">linalg,zeros,matrix</span>
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">linalg,zeros,matrix,arange</span>
 
 
 data <span style="color: #008000; font-weight: bold">=</span> matrix(zeros([4,4]))
@@ -149,13 +151,13 @@ norm <span style="color: #008000; font-weight: bold">=</span> colors.BoundaryNor
         ax<span style="color: #008000; font-weight: bold">.imshow</span>(data, cmap=cmap, norm=norm)
         <span style="color:grey; font-weight: italic"># dibujando las lineas</span>
         ax<span style="color: #008000; font-weight: bold">.grid</span>(which='major', axis='both', linestyle='-', color='k', linewidth=1)
-        ax<span style="color: #008000; font-weight: bold">.set_xticks</span>(np<span style="color: #008000; font-weight: bold">.arange</span>(.5, 4.5, 1));
-        ax<span style="color: #008000; font-weight: bold">.set_yticks</span>(np<span style="color: #008000; font-weight: bold">.arange</span>(.5, 4.5, 1));
+        ax<span style="color: #008000; font-weight: bold">.set_xticks</span>(<span style="color: #008000; font-weight: bold">arange</span>(.5, 4.5, 1));
+        ax<span style="color: #008000; font-weight: bold">.set_yticks</span>(<span style="color: #008000; font-weight: bold">arange</span>(.5, 4.5, 1));
         data[i,j]=0
 
 plt.show()
           </div>
-          <p class="lead">De esta misma forma se prosieguiría con los cuadrados de 2x2, 3x3 y así hasta tener la cantidad ingresada por el cliente.</p>
+          <p class="lead">De esta misma forma se proseguiría con los cuadrados de 2x2, 3x3 y así hasta tener la cantidad ingresada por el cliente.</p>
           <p class="lead">Cuando la exhibición de los cuadrados finaliza, se ejecutaría uno de los códigos mostrados en Cuadrados.</p>
         </div>
       </div>
