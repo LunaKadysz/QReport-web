@@ -1,0 +1,185 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>QReport</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/scrolling-nav.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">Luna Kadysz</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">Cuadrados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#services">Tabla 8x8</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">UX/UI</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>Acertijos Resueltos</h1>
+      <p class="lead">En esta pagina estan resueltos dos de los acertijos propuestos. Para el primero hay dos metodos de resolucion. El ultimo no la tiene</p>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Cuadrados 1</h2>
+          <p class="lead">Consiste en un cuadrado dividido en 16 figuras geométricas cuadradas más pequeñas. La pregunta "¿cuántos cuadrados ves?</p>
+          
+<!-- code=python (!bc pypro) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF; font-weight: bold">suma_iterada</span><span style="color: #008000; font-weight: bold">(</span>n<span style="color: #008000; font-weight: bold">)</span>:
+   resultado <span style="color: #008000; font-weight: bold">=</span> 0
+   i <span style="color: #008000; font-weight: bold">=</span> 1
+   <span style="color: #0000FF; font-weight: bold">while</span>(i<span style="color: #008000; font-weight: bold"> <= </span>n):
+    	resultado <span style="color: #008000; font-weight: bold">=</span> resultado <span style="color: #008000; font-weight: bold">+</span> i<span style="color: #008000; font-weight: bold">**</span>2
+   <span style="color: #008000; font-weight: bold">return</span> resultado
+
+numero <span style="color: #008000; font-weight: bold">=</span><span style="color: #008000; font-weight: bold"> int</span>(<span style="color: #008000; font-weight: bold">input</span>("Ingrese un numero natural:"))
+<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #0000FF; font-weight: bold">suma_iterada</span><span style="color: #008000; font-weight: bold">(</span>numero<span style="color: #008000; font-weight: bold">)</span>)
+</pre></div>
+ <p class="lead">Para resolver este problema se tuvo en cuenta el patrón de soluciones. Cumplen que son la suma de los cuadrados de los numeros naturales menores o iguales al tamaño del tablero que se quiere hallar. Con esto en cosideración, el código propuesto es una iteración de los cuadrados de los numeros naturales mencionados. A medida que la iteración se va llevando a cabo, se guarda en la variable resultado los-valga la redundancia- resultados anteriores.</p> 
+<br>
+<br>
+	<h2>Cuadrados 2</h2>
+	          <p class="lead">Aca está la segunda resolución al problema. Esta vez, utilizando el producto interno de vectores.</p>
+	          <!-- code=python (!bc pypro) typeset with pygments style "default" -->
+	<div class="highlight" style="background: #e8e8e8"><pre style="line-height: 125%"><span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF; font-weight: bold">suma_</span><span style="color: #008000; font-weight: bold">(</span>n<span style="color: #008000; font-weight: bold">)</span>:
+	   v <span style="color: #008000; font-weight: bold">=</span> np<span style="color: #008000; font-weight: bold">.</span><span style="color: #008000; font-weight: bold">arange</span>.(1,n+1)
+	   sqr <span style="color: #008000; font-weight: bold">=</span> (np<span style="color: #008000; font-weight: bold">.</span><span style="color: #008000; font-weight: bold">inner</span>.(1,n+1))
+	   <span style="color: #008000; font-weight: bold">return</span> sqr
+
+	numero <span style="color: #008000; font-weight: bold">=</span><span style="color: #008000; font-weight: bold"> int</span>(<span style="color: #008000; font-weight: bold">input</span>("Ingrese un numero natural:"))
+	<span style="color: #008000; font-weight: bold">print</span>(<span style="color: #0000FF; font-weight: bold">suma_</span><span style="color: #008000; font-weight: bold">(</span>numero<span style="color: #008000; font-weight: bold">)</span>)
+	</pre></div>
+	<p class="lead">Esta solución tuvo en consideración las suposiciones mencionadas en Cuadrados 1. 
+	Como solución queremos la suma de los cuadrados de los numeros naturales menores o iguales al tamaño de tabla elegido. Entonces sabemos que el producto interno de un vector en una dimensión por si mismo es la definición de eso mismo. En otras palabras, el cuadrado de su norma 2.</p> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Tabla 8x8</h2>
+          <p class="lead">El siguiente acertijo plantea lo siguiente: supongamos que a un tablero de 8×8 se le eliminan dos esquinas diagonalmente opuestas, dejando 62 casillas. ¿Es posible colocar 31 piezas de dominó de tamaño 2×1 recubriendo todo el tablero?</p>
+          <img src="img.jpeg" >
+          <p class="lead">Como está mencionado en el encabezado, no es posible colocar las piezas de dominó tal que cubran la totalidad de la superficie deseada.</p>
+          <p class="lead">Para entender la razón pensémoslo de la siguiente forma:</p>
+      	  <p class="lead">Cada pieza de dominó ocupa necesariemente dos casillas: una blanca y una negra. Por ende, al haber sido eliminadas dos esquinas cuyos colores coinciden, los espacios del color opuesto correspondientes a las mismas quedarán forzosamente vacíos.</p>
+      	<p class="lead">Como observación de este problema podemos decir que si se cubren dos casillas del mismo color, dondequiera que estén ubicadas, no se podrán colocar las 31 piezas de dominó.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>UX/UI</h2>
+          <p class="lead">Para comenzar con la experiencia del cliente, en la página se le presentaría el acertijo con una imagen ilustrativa de la grilla.</p>
+          <p class="lead">A continuación se colocaría un unput en el cual el cliente ingresaría el tamaño de grilla deseado:</p>
+          <form>
+  <div class="form-row align-items-center">
+    <div class="col-sm-3 my-1">
+      <label class="sr-only" for="inlineFormInputName">Ingrese un número natural</label>
+      <input type="text" class="form-control" id="inlineFormInputName" placeholder="Ingrese un número">
+    </div>
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">Contar!</button>
+    </div>
+  </div>
+  <br>
+</form>
+          <p class="lead">Y se visualizarían en un programa dinámico las distintos cuadrados posibles. </p>
+      	<p class="lead">En el siguiente código se puede ver en consola los 16 distintos ploteos de los cuadrados posibles de 1x1</p>
+          <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%">
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">matplotlib.pyplot</span> as plt
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">colors</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> as np
+<span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">linalg,zeros,matrix</span>
+
+
+data <span style="color: #008000; font-weight: bold">=</span> matrix(zeros([4,4]))
+
+<span style="color:grey; font-weight: italic"># creando un colormap discreto</span>
+cmap <span style="color: #008000; font-weight: bold">=</span> colors.ListedColormap(['red', 'blue'])
+bounds <span style="color: #008000; font-weight: bold">=</span> [0,1,8]
+norm <span style="color: #008000; font-weight: bold">=</span> colors.BoundaryNorm(bounds, cmap.N)
+
+<span style="color: #0000FF; font-weight: bold">for</span> i <span style="color: #0000FF; font-weight: bold">in</span> range(4):
+    <span style="color: #0000FF; font-weight: bold">for</span> j <span style="color: #0000FF; font-weight: bold">in</span> range(4):
+        data[i,j]<span style="color: #008000; font-weight: bold">=</span>1
+        fig, ax <span style="color: #008000; font-weight: bold">=</span> plt.subplots()
+        ax<span style="color: #008000; font-weight: bold">.imshow</span>(data, cmap=cmap, norm=norm)
+        <span style="color:grey; font-weight: italic"># dibujando las lineas</span>
+        ax<span style="color: #008000; font-weight: bold">.grid</span>(which='major', axis='both', linestyle='-', color='k', linewidth=1)
+        ax<span style="color: #008000; font-weight: bold">.set_xticks</span>(np<span style="color: #008000; font-weight: bold">.arange</span>(.5, 4.5, 1));
+        ax<span style="color: #008000; font-weight: bold">.set_yticks</span>(np<span style="color: #008000; font-weight: bold">.arange</span>(.5, 4.5, 1));
+        data[i,j]=0
+
+plt.show()
+          </div>
+          <p class="lead">De esta misma forma se prosieguiría con los cuadrados de 2x2, 3x3 y así hasta tener la cantidad ingresada por el cliente.</p>
+          <p class="lead">Cuando la exhibición de los cuadrados finaliza, se ejecutaría uno de los códigos mostrados en Cuadrados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Luna Kadysz 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="static 'vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="js/scrolling-nav.js"></script>
+
+</body>
+
+</html>
